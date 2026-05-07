@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HManuel | Administración e Innovación Digital</title>
+    <meta name="description" content="La estructura genera libertad. Consultoría estratégica en administración, sistemas documentales e innovación digital práctica para emprendedores y pymes.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A192F;
+            --teal: #1E9C8C;
+            --gray: #5A6B7C;
+            --light-gray: #F5F7FA;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1A2A3A; }
+
+        /* Hero con Banner */
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.78), rgba(10, 25, 47, 0.85)), 
+                        url('https://i.imgur.com/TU_BANNER_URL.jpg') center/cover no-repeat; /* ← Reemplaza esta URL */
+            color: white;
+            padding: 180px 0 140px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero .highlight { color: var(--teal); }
+        .hero p {
+            font-size: 1.35rem;
+            max-width: 720px;
+            margin: 0 auto 40px;
+        }
+        .btn-primary {
+            background: var(--teal);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.15rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background: #168073;
+            transform: translateY(-4px);
+        }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        section { padding: 100px 0; }
+        .section-title { 
+            text-align: center; 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            color: var(--navy); 
+            margin-bottom: 20px; 
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.2rem;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .package-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 24px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .package-card:hover {
+            border-color: var(--teal);
+            box-shadow: 0 20px 40px -10px rgba(30,156,140,0.2);
+        }
+        .package-price {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--teal);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO CON BANNER -->
+<section class="hero">
+    <div class="container">
+        <h1>La <span class="highlight">estructura</span> genera libertad</h1>
+        <p>Ayudo a emprendedores y pymes a pasar del caos operativo a sistemas claros, documentados y automatizados.<br>Sin teoría. Sin humo. Solo resultados sostenibles.</p>
+        <a href="#contacto" class="btn-primary">Solicitar Diagnóstico Express ($9,800)</a>
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+    <div class="container">
+        <h2 class="section-title">Líneas Estratégicas de Servicio</h2>
+        <p class="section-subtitle">Combinamos administración, documentación e innovación digital práctica.</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:32px;">
+            <div>📐 <strong>Administración Estratégica</strong><br>Manuales, procesos, KPIs y estructura organizacional.</div>
+            <div>⚙️ <strong>Innovación Digital</strong><br>Automatización, IA aplicada y flujos reales.</div>
+            <div>📄 <strong>Sistemas Documentales</strong><br>Manuales maestros y documentación institucional.</div>
+            <div>🏷️ <strong>Branding Estructural</strong><br>Arquitectura de marca y narrativa coherente.</div>
+        </div>
+    </div>
+</section>
+
+<!-- PAQUETES -->
+<section id="paquetes" style="background-color: var(--light-gray);">
+    <div class="container">
+        <h2 class="section-title">Paquetes Comerciales 2026</h2>
+        <p class="section-subtitle">Elige según tu nivel de madurez.</p>
+        <div class="packages-grid">
+            <div class="package-card">
+                <h3>Diagnóstico Express</h3>
+                <div class="package-price">$9,800</div>
+                <p>Claridad en 5-7 días</p>
+                <a href="#contacto" class="btn-primary">Solicitar</a>
+            </div>
+            <div class="package-card">
+                <h3>Orden Institucional</h3>
+                <div class="package-price">$28,500</div>
+                <p>Manual Maestro completo</p>
+                <a href="#contacto" class="btn-primary">Solicitar</a>
+            </div>
+            <div class="package-card">
+                <h3>Procesos Claros</h3>
+                <div class="package-price">$39,500</div>
+                <p>Manual de Procesos + Mapa</p>
+                <a href="#contacto" class="btn-primary">Solicitar</a>
+            </div>
+            <div class="package-card">
+                <h3>Acompañamiento Mensual</h3>
+                <div class="package-price">$16,500 <small>/mes</small></div>
+                <p>Implementación continua</p>
+                <a href="#contacto" class="btn-primary">Iniciar</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+    <div class="container">
+        <h2 class="section-title">¿Hablamos de tu proyecto?</h2>
+        <p class="section-subtitle">Recibirás respuesta en menos de 24 horas.</p>
+        <div style="max-width:600px; margin:0 auto; background:white; padding:40px; border-radius:24px; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+            <form action="https://formsubmit.co/tuemail@ejemplo.com" method="POST">
+                <input type="text" placeholder="Nombre completo" required style="width:100%; padding:14px; margin:12px 0; border:1px solid #ccc; border-radius:12px;">
+                <input type="email" placeholder="Correo electrónico" required style="width:100%; padding:14px; margin:12px 0; border:1px solid #ccc; border-radius:12px;">
+                <textarea placeholder="Cuéntame sobre tu negocio..." rows="5" style="width:100%; padding:14px; margin:12px 0; border:1px solid #ccc; border-radius:12px;"></textarea>
+                <button type="submit" class="btn-primary" style="width:100%;">Enviar mensaje</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer style="background:var(--navy); color:white; text-align:center; padding:60px 20px;">
+    <p><strong>HManuel Administración e Innovación Digital</strong></p>
+    <p>La estructura genera libertad • México 2026</p>
+</footer>
+
+</body>
+</html>
