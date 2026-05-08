@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>HManuel | Administración e Innovación Digital</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --navy:#0A192F;
+    --navy-soft:#102844;
+
+    --teal:#1E9C8C;
+    --teal-dark:#168073;
+
+    --orange:#E07B39;
+    --orange-dark:#C96528;
+
+    --gray:#5A6B7C;
+    --light-gray:#F5F7FA;
+    --white:#FFFFFF;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--white);
+    color:#1A2A3A;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+.container{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 32px;
+}
+
+.section{
+    padding:100px 0;
+}
+
+.section-title{
+    font-size:2.6rem;
+    font-weight:800;
+    color:var(--navy);
+    text-align:center;
+    margin-bottom:16px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:var(--gray);
+    max-width:760px;
+    margin:0 auto 60px;
+    font-size:1.05rem;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(224,123,57,.12);
+    color:var(--orange);
+    border:1px solid rgba(224,123,57,.2);
+    padding:10px 18px;
+    border-radius:999px;
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:.03em;
+    margin-bottom:24px;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--teal) 0%,var(--orange) 100%);
+    color:white;
+    padding:16px 34px;
+    border-radius:60px;
+    font-weight:700;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    transition:all .3s ease;
+    box-shadow:0 12px 30px rgba(224,123,57,.18);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(224,123,57,.28);
+}
+
+.btn-outline{
+    border:2px solid rgba(255,255,255,.18);
+    color:white;
+    padding:16px 30px;
+    border-radius:60px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.btn-outline:hover{
+    border-color:var(--orange);
+    color:var(--orange);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(10,25,47,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:86px;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    flex-direction:column;
+}
+
+.logo h1{
+    color:white;
+    font-size:1.5rem;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    position:relative;
+}
+
+.logo h1 span{
+    color:var(--teal);
+}
+
+.logo h1::after{
+    content:"";
+    display:block;
+    width:72px;
+    height:3px;
+    margin-top:8px;
+    background:var(--orange);
+    border-radius:999px;
+}
+
+.logo small{
+    color:#9FB2C7;
+    font-size:.75rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    margin-top:8px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:32px;
+}
+
+.nav-links a{
+    color:#CCD6E0;
+    text-decoration:none;
+    font-weight:500;
+    position:relative;
+    transition:color .3s ease;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0%;
+    height:2px;
+    background:var(--orange);
+    transition:width .3s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at top right, rgba(30,156,140,.18), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(224,123,57,.12), transparent 25%),
+        linear-gradient(135deg,var(--navy) 0%,var(--navy-soft) 100%);
+    color:white;
+    padding:140px 0 120px;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+    background-size:40px 40px;
+    opacity:.3;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:4.2rem;
+    line-height:1.05;
+    margin-bottom:24px;
+    font-weight:800;
+    letter-spacing:-0.04em;
+}
+
+.hero .highlight{
+    color:var(--teal);
+    position:relative;
+}
+
+.hero .highlight::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:100%;
+    height:5px;
+    background:var(--orange);
+    border-radius:999px;
+}
+
+.hero p{
+    max-width:820px;
+    margin:0 auto 42px;
+    color:#CCD6E0;
+    font-size:1.2rem;
+}
+
+.hero-actions{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.hero-metrics{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.metric-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.06);
+    backdrop-filter:blur(12px);
+    border-radius:24px;
+    padding:28px;
+}
+
+.metric-card h3{
+    color:var(--orange);
+    font-size:2rem;
+    margin-bottom:8px;
+}
+
+.metric-card p{
+    margin:0;
+    font-size:.95rem;
+}
+
+/* =========================
+   PACKAGES
+========================= */
+
+.packages{
+    background:var(--light-gray);
+}
+
+.packages-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:32px;
+}
+
+.package-card{
+    background:white;
+    border:1px solid #E2E8F0;
+    border-top:5px solid transparent;
+    border-radius:28px;
+    padding:42px 34px;
+    transition:all .35s ease;
+    position:relative;
+}
+
+.package-card:hover{
+    transform:translateY(-8px);
+    border-top-color:var(--orange);
+    border-color:rgba(224,123,57,.18);
+    box-shadow:0 24px 50px rgba(224,123,57,.12);
+}
+
+.package-label{
+    display:inline-block;
+    background:rgba(224,123,57,.1);
+    color:var(--orange);
+    border-radius:999px;
+    padding:6px 14px;
+    font-size:.75rem;
+    font-weight:700;
+    margin-bottom:18px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+}
+
+.package-card h3{
+    font-size:1.45rem;
+    color:var(--navy);
+    margin-bottom:8px;
+}
+
+.package-price{
+    font-size:2.4rem;
+    font-weight:800;
+    margin:20px 0 26px;
+    background:linear-gradient(135deg,var(--teal),var(--orange));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.package-card ul{
+    list-style:none;
+    margin-bottom:30px;
+}
+
+.package-card ul li{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:14px;
+    color:var(--gray);
+}
+
+.package-card ul li::before{
+    content:"";
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--orange);
+    position:absolute;
+    left:0;
+    top:10px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+}
+
+.service-card{
+    border:1px solid #E6ECF2;
+    border-radius:24px;
+    padding:36px;
+    transition:.3s ease;
+}
+
+.service-card:hover{
+    border-color:rgba(224,123,57,.2);
+    box-shadow:0 18px 40px rgba(10,25,47,.06);
+}
+
+.service-icon{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    background:linear-gradient(135deg,var(--teal),var(--orange));
+    margin-bottom:24px;
+}
+
+.service-card h3{
+    margin-bottom:14px;
+    color:var(--navy);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    background:
+    radial-gradient(circle at top left, rgba(224,123,57,.16), transparent 30%),
+    linear-gradient(135deg,var(--navy),#112E4A);
+    color:white;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:760px;
+    margin:0 auto 40px;
+    color:#CCD6E0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:var(--navy);
+    border-top:4px solid var(--orange);
+    color:#CCD6E0;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.footer-logo{
+    font-size:1.6rem;
+    font-weight:800;
+    color:white;
+    margin-bottom:14px;
+}
+
+.footer-logo span{
+    color:var(--teal);
+}
+
+.footer p{
+    margin-bottom:10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:980px){
+
+    .nav{
+        flex-direction:column;
+        padding:18px 0;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero-metrics{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:640px){
+
+    .container{
+        padding:0 22px;
+    }
+
+    .hero{
+        padding:110px 0 90px;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .btn-primary,
+    .btn-outline{
+        width:100%;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <div class="container">
+
+        <nav class="nav">
+
+            <div class="logo">
+                <h1>H<span>Manuel</span></h1>
+                <small>Administración e Innovación Digital</small>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#paquetes">Paquetes</a></li>
+                <li><a href="#metodologia">Método</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                CONSULTORÍA ESTRUCTURAL • MÉXICO 2026
+            </div>
+
+            <h1>
+                La <span class="highlight">estructura</span>
+                genera libertad
+            </h1>
+
+            <p>
+                Ayudo a emprendedores y pymes a pasar del caos operativo a sistemas claros, documentados y automatizados. Sin humo. Sin teoría innecesaria. Solo estructuras funcionales que generan control, claridad y crecimiento sostenible.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#contacto" class="btn-primary">
+                    Solicitar Diagnóstico Express
+                </a>
+
+                <a href="#paquetes" class="btn-outline">
+                    Ver Paquetes
+                </a>
+
+            </div>
+
+            <div class="hero-metrics">
+
+                <div class="metric-card">
+                    <h3>+40%</h3>
+                    <p>Mejora operativa promedio después de estructurar procesos.</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3>100%</h3>
+                    <p>Documentación profesional y entregables institucionales.</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3>0 caos</h3>
+                    <p>Sistemas diseñados para reducir dependencia y desorden.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     SERVICIOS
+========================= -->
+
+<section id="servicios" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Servicios Estratégicos
+        </h2>
+
+        <p class="section-subtitle">
+            Consultoría orientada a estructura institucional, documentación operativa y transformación organizacional.
+        </p>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Diagnóstico Organizacional</h3>
+                <p>Identificación de cuellos de botella, dependencia operativa y áreas críticas.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Manual Maestro</h3>
+                <p>Construcción documental integral para profesionalizar operaciones.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Procesos y Flujos</h3>
+                <p>Estandarización de tareas, roles, estructuras y operación interna.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Innovación Digital</h3>
+                <p>Implementación de herramientas digitales y automatización inteligente.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     PAQUETES
+========================= -->
+
+<section id="paquetes" class="section packages">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Paquetes Comerciales 2026
+        </h2>
+
+        <p class="section-subtitle">
+            Soluciones diseñadas para resultados reales, medibles y sostenibles.
+        </p>
+
+        <div class="packages-grid">
+
+            <div class="package-card">
+
+                <div class="package-label">
+                    Entrada
+                </div>
+
+                <h3>Diagnóstico Express</h3>
+
+                <div class="package-price">
+                    $9,800
+                </div>
+
+                <ul>
+                    <li>Sesión estratégica de diagnóstico</li>
+                    <li>Reporte ejecutivo profesional</li>
+                    <li>Mapa de prioridades</li>
+                    <li>Ruta de acción inmediata</li>
+                </ul>
+
+                <a href="#contacto" class="btn-primary">
+                    Solicitar
+                </a>
+
+            </div>
+
+            <div class="package-card">
+
+                <div class="package-label">
+                    Institucional
+                </div>
+
+                <h3>Orden Institucional</h3>
+
+                <div class="package-price">
+                    $28,500
+                </div>
+
+                <ul>
+                    <li>Manual Maestro completo</li>
+                    <li>Identidad institucional</li>
+                    <li>Estructura documental</li>
+                    <li>Entregables premium</li>
+                </ul>
+
+                <a href="#contacto" class="btn-primary">
+                    Solicitar
+                </a>
+
+            </div>
+
+            <div class="package-card">
+
+                <div class="package-label">
+                    Operación
+                </div>
+
+                <h3>Procesos Claros</h3>
+
+                <div class="package-price">
+                    $39,500
+                </div>
+
+                <ul>
+                    <li>Manual de procesos</li>
+                    <li>Mapa de flujos operativos</li>
+                    <li>Roles y responsabilidades</li>
+                    <li>Reducción de dependencia</li>
+                </ul>
+
+                <a href="#contacto" class="btn-primary">
+                    Solicitar
+                </a>
+
+            </div>
+
+            <div class="package-card">
+
+                <div class="package-label">
+                    Continuidad
+                </div>
+
+                <h3>Acompañamiento Mensual</h3>
+
+                <div class="package-price">
+                    $16,500/mes
+                </div>
+
+                <ul>
+                    <li>Sesiones estratégicas</li>
+                    <li>Implementación continua</li>
+                    <li>Ajustes y seguimiento</li>
+                    <li>Soporte prioritario</li>
+                </ul>
+
+                <a href="#contacto" class="btn-primary">
+                    Iniciar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="section cta" id="contacto">
+
+    <div class="container">
+
+        <h2>
+            Construyamos una operación más clara
+        </h2>
+
+        <p>
+            Si tu empresa depende demasiado de personas, improvisación o procesos invisibles, es momento de institucionalizar.
+        </p>
+
+        <a href="mailto:hola@hmanuel.mx" class="btn-primary">
+            Agendar Conversación
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        H<span>Manuel</span>
+    </div>
+
+    <p>
+        Administración e Innovación Digital
+    </p>
+
+    <p>
+        La estructura genera libertad • México 2026
+    </p>
+
+</footer>
+
+</body>
+</html>
